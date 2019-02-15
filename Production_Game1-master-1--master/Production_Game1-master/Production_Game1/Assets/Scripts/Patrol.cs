@@ -3,55 +3,66 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Patrol : MonoBehaviour {
+public class Patrol : MonoBehaviour
+{
 
     private NavMeshAgent navAgent;
     private float patrol_Radius = 30f;
     private float patrol_Timer = 6f;
     private float timer_Count;
-    /*here*/ public GameObject target;
-    public GameObject bullet;
+    /*here*/
+    public GameObject target;
+    // public GameObject bullet;
 
-    
 
-    void Awake (){
+
+
+    void Awake()
+    {
         navAgent = GetComponent<NavMeshAgent>();
     }
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start()
+    {
         timer_Count = patrol_Timer;
-       /*here*/ //target = Player.instance.Player.transform;
-	}
-	
-	// Update is called once per frame
-	void Update () {
+        /*here*/ //target = Player.instance.Player.transform;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
         Patroling();
         /*here*/
         float distance = Vector3.Distance(target.transform.position, transform.position);
 
-        if (distance <= patrol_Radius){
+        if (distance <= patrol_Radius)
+        {
 
             navAgent.SetDestination(target.transform.position);
             /*here*/
         }
-	}
+    }
 
-    void Patroling(){
+    void Patroling()
+    {
         timer_Count += Time.deltaTime;
 
-        if (timer_Count > patrol_Timer){
+        if (timer_Count > patrol_Timer)
+        {
             SetNewRandomDestination();
             timer_Count = 0f;
         }
 
     }
-    void SetNewRandomDestination(){
+    void SetNewRandomDestination()
+    {
 
         Vector3 newDestination = RandomNavSphere(transform.position, patrol_Radius, -1);
         navAgent.SetDestination(newDestination);
     }
-    Vector3 RandomNavSphere(Vector3 originPos, float radius, int layerMask){
+    Vector3 RandomNavSphere(Vector3 originPos, float radius, int layerMask)
+    {
         Vector3 randDir = Random.insideUnitSphere * radius;
         randDir += originPos;
 
@@ -72,6 +83,7 @@ public class Patrol : MonoBehaviour {
             LoseMenu.GameIsLost = true;
         }
         //here
+        /*
         if (other.gameObject.CompareTag("Bullet")){
 
             Die();
@@ -80,10 +92,11 @@ public class Patrol : MonoBehaviour {
     }
 
     public void Die(){
-        navAgent.isStopped = true;
-        Destroy(this);
+        
+        gameObject.GetComponent<Patrol>().enabled = false;
 
     }
-    //here
+    */
+        //here
+    }
 }
-

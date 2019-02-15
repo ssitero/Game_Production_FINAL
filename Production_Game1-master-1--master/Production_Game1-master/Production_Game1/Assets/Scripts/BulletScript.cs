@@ -30,16 +30,19 @@ public class BulletScript : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    /*
+
+
     void OnTriggerEnter(Collider other)
     {
 
-        if (other.gameObject.CompareTag("Guard"))
-        {
+        if (other.gameObject.CompareTag("Enemy")){
 
-            enemy.GetComponent("Guard").enabled = false;
+            other.gameObject.SetActive(false);
         }
+
     }
-    */
-   
+
+  
+
+
 }
