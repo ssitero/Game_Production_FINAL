@@ -11,4 +11,8 @@ public class LoadSceneOnClick : MonoBehaviour {
         SceneManager.LoadScene(sceneIndex);
 
     }
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
 }
