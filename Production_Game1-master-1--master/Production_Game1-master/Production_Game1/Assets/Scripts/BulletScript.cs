@@ -37,7 +37,8 @@ public class BulletScript : MonoBehaviour
 
         if (other.gameObject.CompareTag("Enemy")){
 
-            other.gameObject.SetActive(false);
+            other.GetComponent<Patrol>().enabled = false;
+
         }
 
     }
