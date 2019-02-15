@@ -6,6 +6,8 @@ public class Test : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
         Time.timeScale = 1f;
     }
 	

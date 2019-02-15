@@ -48,6 +48,8 @@ void Pause()
 }
     public void QuitGame(){
 
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
         Time.timeScale = 1f;
         SceneManager.LoadScene("Main_Menu");
 
