@@ -8,9 +8,9 @@ public class LoadSceneOnClick : MonoBehaviour {
     public void LoadByIndex(int sceneIndex)
     {
 
-       // SceneManager.LoadScene(sceneIndex);
+        SceneManager.LoadScene(sceneIndex);
 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().sceneIndex);
                                                                
     }
     public void ExitGame()
