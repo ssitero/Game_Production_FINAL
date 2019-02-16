@@ -31,8 +31,14 @@ public class WinMenu : MonoBehaviour
     public void QuitGame()
     {
 
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
         Time.timeScale = 1f;
-        SceneManager.LoadScene("Main_Menu");
+        WinMenu.GameIsWon = false;
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+
+        SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
 
     }
 

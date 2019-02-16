@@ -3,18 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class LoadSceneOnClick : MonoBehaviour {
+public class LoadSceneOnClick : MonoBehaviour
+{
 
-    public void LoadByIndex(int sceneIndex)
+    public void LoadByIndex (int buildIndex)
     {
 
-        SceneManager.LoadScene(sceneIndex);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
+    SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
 
 
-                                                               
-    }
-    public void ExitGame()
-    {
-        Application.Quit();
     }
 }

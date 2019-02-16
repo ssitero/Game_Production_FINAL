@@ -51,7 +51,9 @@ void Pause()
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         Time.timeScale = 1f;
-        SceneManager.LoadScene("Main_Menu");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+
+        SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
 
     }
 
