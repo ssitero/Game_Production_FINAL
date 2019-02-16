@@ -32,8 +32,9 @@ public class LoseMenu : MonoBehaviour
         if (currentTime <= 0)
         {
 
-            LoseMenu.GameIsLost = true;
+            Lose();
             currentTime = 0;
+            LoseMenu.GameIsLost = false;
 
         }
 
