@@ -10,7 +10,7 @@ public class LoadSceneOnClick : MonoBehaviour {
 
         SceneManager.LoadScene(sceneIndex);
 
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().sceneIndex);
+
                                                                
     }
     public void ExitGame()
